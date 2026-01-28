@@ -44,14 +44,14 @@ const AdminPanelPage = () => {
       const token = localStorage.getItem('token');
 
       // Fetch users
-      const usersResponse = await fetch('http://localhost:5000/api/admin/users', {
+      const usersResponse = await fetch('${process.env.REACT_BACKEND_URL}/api/admin/users', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
       // Fetch analytics
-      const analyticsResponse = await fetch('http://localhost:5000/api/admin/analytics', {
+      const analyticsResponse = await fetch('${process.env.REACT_BACKEND_URL}/api/admin/analytics', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -77,7 +77,7 @@ const AdminPanelPage = () => {
   const handleRoleChange = async (userId, newRole) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/users/${userId}/role`, {
+      const response = await fetch(`${process.env.REACT_BACKEND_URL}/api/admin/users/${userId}/role`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ const AdminPanelPage = () => {
     if (window.confirm('Are you sure you want to disable this user?')) {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:5000/api/admin/users/${userId}`, {
+        const response = await fetch(`${process.env.REACT_BACKEND_URL}/api/admin/users/${userId}`, {
           method: 'DELETE',
           headers: {
             Authorization: `Bearer ${token}`,
