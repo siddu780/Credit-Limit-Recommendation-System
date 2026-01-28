@@ -1,0 +1,40 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.page-container {
+  flex: 1;
+  padding: 2rem;
+}
+
+.btn-primary-custom {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.btn-primary-custom:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+.card-custom {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.dashboard-header {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 1rem;
+}

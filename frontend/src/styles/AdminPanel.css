@@ -1,0 +1,58 @@
+.admin-stat-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.admin-stat-card h6 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.admin-stat-card h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0 0;
+}
+
+.card-custom {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nav-tabs {
+  border-bottom: 2px solid #e9ecef;
+}
+
+.nav-tabs .nav-link {
+  color: #495057;
+  border: none;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.nav-tabs .nav-link.active {
+  color: #667eea;
+  background-color: transparent;
+  border-bottom-color: #667eea;
+}
+
+table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.6rem;
+}
