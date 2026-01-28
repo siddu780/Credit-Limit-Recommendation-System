@@ -85,7 +85,7 @@ const FinancialAdvicePage = () => {
     let score = 600; // Starting score
 
     // Fetch user profile data and calculate
-    fetch('http://localhost:5000/api/profile', {
+    fetch('${process.env.REACT_BACKEND_URL}/api/profile', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
@@ -268,7 +268,7 @@ const FinancialAdvicePage = () => {
 
     setBankFormLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/bank/calculate-credit-score', {
+      const response = await fetch('${process.env.REACT_BACKEND_URL}/api/bank/calculate-credit-score', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -313,7 +313,7 @@ const FinancialAdvicePage = () => {
 
   const fetchAndShowGoals = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/bank/goals', {
+      const response = await fetch('${process.env.REACT_BACKEND_URL}/api/bank/goals', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
