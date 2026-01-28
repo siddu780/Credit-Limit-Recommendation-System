@@ -21,7 +21,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Test database connection
-testConnection();
+testConnection().catch(err =>
+  console.error("DB test failed:", err.message)
+);
+
 
 // Routes
 app.get('/api/health', (req, res) => {
