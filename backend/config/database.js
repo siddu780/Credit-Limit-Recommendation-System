@@ -1,14 +1,23 @@
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize(
-  process.env.MYSQLDATABASE,
-  process.env.MYSQLUSER,
-  process.env.MYSQLPASSWORD,
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
   {
-    host: process.env.MYSQLHOST,
-    port: process.env.MYSQLPORT,
+    host: process.env.DB_HOST,              // mysql.railway.internal
+    port: Number(process.env.DB_PORT),      // IMPORTANT: ensure number
     dialect: 'mysql',
     logging: false,
+    dialectOptions: {
+      ssl: false
+    },
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
   }
 );
 
@@ -17,8 +26,7 @@ const testConnection = async () => {
     await sequelize.authenticate();
     console.log('✅ Database connection established successfully.');
   } catch (error) {
-    console.error('❌ Database connection failed:', error.message);
-    // DO NOT throw
+    console.error('❌ DB connection error:', error.message);
   }
 };
 
