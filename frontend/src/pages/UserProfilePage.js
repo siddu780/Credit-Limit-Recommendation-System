@@ -35,7 +35,7 @@ const UserProfilePage = () => {
 
   const handleSaveProfile = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/user/profile', {
+      const response = await fetch('${process.env.REACT_BACKEND_URL}/api/user/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ const UserProfilePage = () => {
 
     setPasswordLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/bank/change-password', {
+      const response = await fetch('${process.env.REACT_BACKEND_URL}/api/bank/change-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ const UserProfilePage = () => {
     setDownloadLoading(true);
     try {
       // Fetch user data
-      const response = await fetch('http://localhost:5000/api/bank/download-data', {
+      const response = await fetch('${process.env.REACT_BACKEND_URL}/api/bank/download-data', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -267,7 +267,7 @@ const UserProfilePage = () => {
 
     setDeleteLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/bank/delete-account', {
+      const response = await fetch('${process.env.REACT_BACKEND_URL}/api/bank/delete-account', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
