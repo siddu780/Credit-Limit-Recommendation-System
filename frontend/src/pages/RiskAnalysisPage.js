@@ -17,7 +17,7 @@ const RiskAnalysisPage = () => {
 
   const fetchRiskAnalysis = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/risk-analysis', {
+      const response = await fetch('${process.env.REACT_BACKEND_URL}/api/risk-analysis', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
