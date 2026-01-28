@@ -1,3 +1,9 @@
+console.log("DB CHECK:", {
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: !!process.env.DB_USER,
+  db: !!process.env.DB_NAME
+});
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize(
